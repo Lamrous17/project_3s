@@ -627,6 +627,7 @@ background text
   width: calc((100% - 5 * 20px) / 5);
 }
 .movie-poster{
+  height: 390px;
   width: 100%;
   display: block;
 }
