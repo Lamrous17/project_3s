@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Reviews main</title>
+    <link rel="stylesheet" href="mainstr.css">
+
+
+    <link href='http://fonts.googleapis.com/css?family=Varela+Round|Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $("#loginLink").click(function( event ){
+               event.preventDefault();
+               $(".overlay").fadeToggle("fast");
+         });
+
+        $(".overlayLink").click(function(event){
+            event.preventDefault();
+            var action = $(this).attr('data-action');
+
+            $("#loginTarget").load("ajax/" + action);
+
+            $(".overlay").fadeToggle("fast");
+        });
+        $(document).keyup(function(e) {
+            if(e.keyCode == 27 && $(".overlay").css("display") != "none" ) {
+                event.preventDefault();
+                $(".overlay").fadeToggle("fast");
+            }
+        });
+    });
+    </script>
+
+  </head>
+
+  <header>
+    <button class="favorite">Favorites</button>
+    <button class="register">Registration</button>
+  </header>
+  <body>
+
+    <div class="container">
+        <input type="radio" name="slider" id="item-1" checked>
+        <input type="radio" name="slider" id="item-2">
+        <input type="radio" name="slider" id="item-3">
+      <div class="cards">
+        <label class="card" for="item-1" id="picture-1">
+          <div class="wrapper">
+            <img src="Кино.png" alt="song">
+            <a class="page-link" href="/movies.html"></a>
+          </div>
+        </label>
+        <label class="card" for="item-2" id="picture-2">
+          <img src="Одежда.png" alt="song">
+        </label>
+        <label class="card" for="item-3" id="picture-3">
+          <img src="Техника.png">
+        </label>
+      </div>
+    </div>
+
+
+<!--<div class="logo">
+  <img src="logo.png" alt="image">
+</div>-->
+
+<div class="logo1">
+  <img src="logo1.png" alt="image">
+</div>
+
+<div class="logo2">
+  <img src="logo2.png" alt="image">
+</div>
+
+
+
+  <div class="backdrop is-hidden" data-modal> 
+    <div class="modal">
+      <button type="button" class="modal__close-btn" data-modal-close>
+        Close
+      </button>
+      <h2 class="modal__title">Registration</h2>
+      <form>
+        <div class="modal__input-position">
+          <label for="user_name" class="modal__input-label">
+            Name
+          </label>
+          <input id="user_name" type="text" class="modal__input" name="user_name">
+        </div>
+        <div class="modal__input-position">
+          <label for="user_tel" class="modal__input-label">
+            Email
+          </label>
+          <input id="user_tel" type="email" class="modal__input" name="user_tel">
+        </div>
+        <div class="modal__input-position">
+          <label for="user_email" class="modal__input-label">
+            Password
+          </label>
+          <input id="user_email" type="password" class="modal__input" name="user_email">
+        </div>
+        <button type="submit" class="modal__send-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+  <script src="mainstr.js"></script>
+  <script src="modal.js"></script>
+  </body>
+</html>
