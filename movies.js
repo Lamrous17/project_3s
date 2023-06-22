@@ -21,7 +21,7 @@ async function getMovies(query, page = 1) {
     const data = await response.json();
     return data;
   } catch (error) {
-    return alert("Test");
+    return alert("Error. Use VPN to use this site");
   }
 }
 
